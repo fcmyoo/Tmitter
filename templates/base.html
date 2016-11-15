@@ -11,8 +11,12 @@
         <title>Tmiteer{% block title %}{% endblock %}</title>
         <link rel="stylesheet" href="/statics/images/favicon.png">
         <link rel="stylesheet" type="text/css" href="/statics/styles/default.css">
+        <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
         {% block head_link %}{% endblock %}
-        <script src="//cdn.bootcss.com/jquery/1.11.0/jquery.js"></script>
+        <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+        <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+        <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+        <script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
         <script>
 {#            jquery的手机大小自适应,并对body进行css设置.#}
 {#            $(window).resize是指用户打开页面后缩放比例随着用户浏览器窗口变化而变化 #}
@@ -50,7 +54,7 @@
                 {% endif %}
             </ul>
         </div>
-        <div class="main">
+        <div class="container">
             {% block main %}{% endblock %}
         </div>
         <div class="footer">

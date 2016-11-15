@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
+{% get_available_languages as LANGUAGES %}
+{% get_current_language_bidi as LANGUAGE_BIDI %}
+{% block title %}{{ page_title }}{% endblock %}
+
+{% block main %}
+<div class="form row">
+            <form class="form-horizontal col-sm-offset-3 col-md-offset-3" id="register_form" action="/signup/" method="post">
+                {% block title %}<h3>{{ page_title }}</h3>{% endblock %}
+                <div class="col-sm-9 col-md-9">
+                    <div class="form-group">
+                        <i class="fa fa-user fa-lg"></i>
+                        <input class="form-control required" type="text" placeholder="{% trans 'UserName' %}" name="username" autofocus="autofocus"/>
+                    </div>
+                    <div class="form-group">
+                        <i class="fa fa-user fa-lg"></i>
+                        <input class="form-control required" type="text" placeholder="{% trans 'RealName' %}" name="realname" autofocus="autofocus"/>
+                    </div>
+                    <div class="form-group">
+                            <i class="fa fa-lock fa-lg"></i>
+                            <input class="form-control required" type="password" placeholder="{% trans 'PassWord' %}" name="password"/>
+                    </div>
+                    <div class="form-group">
+                            <i class="fa fa-check fa-lg"></i>
+                            <input class="form-control required" type="password" placeholder="{% trans 'Re-type Your Password' %}" name="confirm"/>
+                    </div>
+                    <div class="form-group">
+                            <i class="fa fa-envelope fa-lg"></i>
+                            <input class="form-control eamil" type="text" placeholder="{% trans 'Email' %}" name="email"/>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" class="btn btn-success pull-right" value="{% trans 'Sign Up' %} "/>
+                        <input type="submit" class="btn btn-info pull-left" id="back_btn" value="Back"/>
+                    </div>
+                </div>
+            </form>
+{% endblock %}
